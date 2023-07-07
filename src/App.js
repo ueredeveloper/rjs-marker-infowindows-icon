@@ -1,14 +1,16 @@
-import { mkrRedIcon } from "../assets/png";
-import { iwManualIcon } from "../assets/svg";
+import mkrRedIcon from "./assets/png/red-icon.png";
+import { iwManualIcon } from "./assets/svg/index";
 import "./styles.css";
 
 export default function App() {
   function getIcons(id, ti_id, tp_id) {
     if (id === 0) {
       // Return red icon and marker color
+      let color = "#9D0404"
       return {
         mrkIcon: mkrRedIcon,
-        iwIcon: iwManualIcon("#9D0404")
+        iwIcon: iwManualIcon("#9D0404"),
+        color: color
       };
     }
     return null;
@@ -220,12 +222,13 @@ export default function App() {
           height: "100px"
         }}
       ></div>
+
       <h1>Icone do Marcador</h1>
       <div>
         <img src={iconColor.mrkIcon} alt="Logo" />
       </div>
-      <h1> ícone no InfoWindows </h1>
-      <div></div>
+      <h1> Ícone no InfoWindows </h1>
+
       <div
         style={{ height: 100, width: 100 }}
         dangerouslySetInnerHTML={{ __html: iconColor.iwIcon }}
